@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notas Online</title>
+</head>
+<body>
+    <script>
+        // Função para calcular a média das notas
+        function calcularMedia(notasArray) {
+            let soma = 0;
+            for (let i = 0; i < notasArray.length; i++) {
+                soma += notasArray[i];
+            }
+            return soma / notasArray.length;
+        }
+
+        // Capturar o nome da matéria
+        let nomeMateria = prompt("Digite o nome da matéria:");
+
+        // Inicializar o array de notas
+        let notas = [];
+        let i = 0;
+
+        // Capturar as 4 notas usando um laço while
+        while (i < 4) {
+            let nota = parseFloat(prompt(`Digite a nota ${i + 1}:`));
+            if (!isNaN(nota) && nota >= 0 && nota <= 10) {
+                notas.push(nota);
+                i++;
+            } else {
+                alert("Por favor, insira uma nota válida entre 0 e 10.");
+            }
+        }
+
+        // Montar o objeto com o nome da matéria e as notas
+        let materia = {
+            nomeMateria: nomeMateria,
+            notas: notas
+        };
+
+        // Calcular a média das notas
+        let media = calcularMedia(materia.notas);
+
+        // Exibir o resultado
+        document.write(`<h2>Informações da Matéria</h2>`);
+        document.write(`Nome da Matéria: ${materia.nomeMateria} <br>`);
+        document.write(`Notas: ${materia.notas.join(", ")} <br>`);
+        document.write(`Média: ${media.toFixed(2)} <br>`);
+    </script>
+</body>
+</html>
