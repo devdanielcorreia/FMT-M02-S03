@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Nomes</title>
+</head>
+<body>
+    <script>
+        // Função para imprimir os nomes dos alunos usando forEach e document.write
+        function imprimirNomes(alunos) {
+            alunos.forEach(function(nome) {
+                document.write(nome + "<br>");
+            });
+        }
+
+        // Array de exemplo com alguns nomes de alunos
+        let alunos = ["Ana", "Bruno", "Carlos", "Daniela"];
+        imprimirNomes(alunos);
+    </script>
+</body>
+</html>
